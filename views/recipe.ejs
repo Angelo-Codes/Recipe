@@ -1,0 +1,38 @@
+<% if(recipe != null) { %>
+    <nav>
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li><%- recipe.name %></li>
+        </ol>
+    </nav>
+
+    <div>
+        <div>
+            <img src="/uploads/<%- recipe.image %>" alt="<%- recipe.name %> ">
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <div><h1><%- recipe.name %></h1></div>
+            <div><i>icon</i><%- recipe.category %></div>
+            <div>
+                <h4>Cooking Instructions</h4>
+                <%- recipe.description %> 
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h4>Ingredients</h4>
+            <ul>
+            <% recipe.ingredients.forEach(function(ingredients, index){ %> 
+                <li><%= ingredients %> </li>
+            <% }) %> 
+            </ul>
+        </div>
+    </div>
+<% } else { %>
+    <p>No item found</p>
+<% } %> 

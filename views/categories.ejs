@@ -1,0 +1,19 @@
+<h1>Explore Categories</h1>
+<nav>
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li>Explore Categories</li>
+    </ol>
+</nav>
+<div>
+    <% if(categories != '') { %>
+        <% categories.forEach(function(category, index) { %>
+            <a href="/categories/<%- category.name %>">
+                <div class="category">
+                    <img src="img/<%- category.img %> " alt="<%- category.name %>">
+                </div>
+                <div><%- category.name %></div>
+            </a>
+        <% }) %>
+    <% } %>
+</div>
