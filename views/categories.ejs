@@ -2,11 +2,12 @@
 <nav>
     <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/categories">Categories</a></li>
         <li>Explore Categories</li>
     </ol>
 </nav>
 <div>
-    <% if(categories != '') { %>
+    <% if(typeof categories !== 'undefined' && categories.length > 0) { %>
         <% categories.forEach(function(category, index) { %>
             <a href="/categories/<%- category.name %>">
                 <div class="category">
@@ -15,5 +16,19 @@
                 <div><%- category.name %></div>
             </a>
         <% }) %>
+    <% } %>
+</div>
+<div>
+    <% if(typeof categoryById !== 'undefined' && categoryById.length > 0) { %>
+        <% categoryById.forEach(function(recipe, index) { %>
+            <a href="/recipe/<%- recipe._id %>">
+                <div class="category">
+                    <img src="img/<%- recipe.img %> " alt="<%- recipe.name %>">
+                </div>
+                <div><%- recipe.name %></div>
+            </a>
+        <% }) %>
+    <% } else {%>
+        <p>No items found</p>
     <% } %>
 </div>

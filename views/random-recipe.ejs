@@ -1,0 +1,13 @@
+<h1>Random Recipe</h1>
+<div>
+    <% if(recipe != '') { %> 
+        <a href="/recipe/<%- recipe._id %>">
+            <div class="category">
+                <img src="img/<%- recipe.img %> " alt="<%- recipe.name %>">
+            </div>
+            <div><%- recipe.name %></div>
+        </a>
+    <% } else {%>
+        <p>No items found</p>
+    <% } %>
+</div>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const categorySchema = new mongoose.Schema({
+const recipeSchema = new mongoose.Schema({
     name: {
         type: String,
         required: 'This fild is required.'
@@ -23,8 +23,11 @@ const categorySchema = new mongoose.Schema({
         required: 'This fild is required.'
     },
     image: {
-        type: Array,
+        type: String,
         required: 'This fild is required.'
     }
 });
-module.exports = mongoose.model('Recipe', categorySchema);
+recipeSchema.index({name: 'text', description: 'text'});
+//recipeSchema.index({ "$**": 'text'});
+
+module.exports = mongoose.model('Recipe', recipeSchema);

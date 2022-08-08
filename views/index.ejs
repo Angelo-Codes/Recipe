@@ -1,14 +1,16 @@
-<div>
-    <div>
-        <img src="" alt="">
+<div class="divtitle">
+    <div class="titlediv">
+        <div>
+            <h1>Huge selection of delicios recipe ideas</h1>
+            <p>Explore our huge selection of delicios recipe ideas including; easy deserts, delicios vegan and vegetarian dinner ideas, gorgeous pasta recipes, quick bakes, famil-friendly meals and gluten-free recipes</p>
+        </div>
+        <div class="recipebtn">
+            <a class="latestbtn" href="/explore-latest">Explore-latest</a>
+            <a class="randomtbtn" href="/random-recipe">Show Random</a>
+        </div>
     </div>
-    <div>
-        <h1>Huge selection of delicios recipe ideas</h1>
-        <p>Explore our huge selection of delicios recipe ideas including; easy deserts, delicios vegan and vegetarian dinner ideas, gorgeous pasta recipes, quick bakes, famil-friendly meals and gluten-free recipes</p>
-    </div>
-    <div>
-        <a href="/explore-latest">Explore-latest</a>
-        <a href="/randon-recipe">Show Random</a>
+    <div class="titleimg">
+        <img src="img/thai-food.jpg" alt="thai-food">
     </div>
 </div>
 
@@ -17,15 +19,15 @@
     <% if(categories != '') { %>
         <% categories.forEach(function(category, index) { %> 
             <a href="/categories/<%- category.name %>">
-                <div class="category">
-                    <img src="img/<%- category.img %> " alt="<%- category.name %>">
+                <div class="categoryimg">
+                    <img src="img/<%- category.img %>" alt="<%- category.name %>">
                 </div>
                 <div><%- category.name %></div>
             </a>
         <% }) %>
     <% } %>
     <a href="/categories">
-        <div class="category">
+        <div class="categoryimg">
             <img src="img/thai-food" alt="thai-food">
         </div>
         <div>view all</div>
@@ -38,11 +40,11 @@
         <h2>Latest recipe</h2>
         <a href="/explore-latest">View More</a>
     </div>
-    <div>
+    <div class="category">
         <% if(food != '') { %> 
             <% food.latest.forEach(function(recipe, index) { %> 
                 <a href="/recipe/<%= recipe._id %>">
-                    <div class="category">
+                    <div class="categoryimg">
                         <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>">
                     </div>
                     <div><%= recipe.name %></div>
@@ -58,12 +60,12 @@
         <h2>American Recipes</h2>
         <a href="/categories/American">View More</a>
     </div>
-    <div>
+    <div class="category">
         <% if(typeof food.american !== 'undefined' && food.american.length > 0) { %> 
             <% food.american.forEach(function(recipe, index) { %>
                 <a href="/recipe/<%- recipe._id %>">
-                    <div class="category">
-                        <img src="img/<%- recipe.img %> " alt="<%- recipe.name %>">
+                    <div class="categoryimg">
+                        <img src="img/<%- recipe.img %>" alt="<%- recipe.name %>">
                     </div>
                     <div><%- recipe.name %></div>
                 </a>
@@ -73,26 +75,6 @@
         <% } %> 
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- submit start -->
 <section>

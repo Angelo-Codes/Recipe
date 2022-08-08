@@ -1,0 +1,73 @@
+<div>
+    <h1>Submit Your Recipe</h1>
+    <div>
+        <p>Share your amazing recipes with thousands of web developers accross the world. Fill our form to get started.</p>
+    </div>
+</div>
+
+
+<div>
+<% if(infoSubmitObj != '') {%> 
+    <div class="alert" role="alert">
+        <%= infoSubmitObj %> 
+    </div>
+<% } %>
+<% if(infoErrorsObj != '') {%> 
+    <div class="alert" role="alert">
+        <%= infoErrorsObj %> 
+    </div>
+<% } %>
+
+    <div>
+        <form action="/submit-recipe" enctype="multipart/form-data" method="POST">
+            <div class="row">
+                <div class="col">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="col">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                
+                <div class="col">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="col">
+                    <label for="name" class="form-label">Name</label>
+                    <small>Example: Ice</small>
+                    <div class="ingredientList">
+                        <div class="ingredientDiv">
+                            <input type="text" name="ingredients" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn" id="addIgredientsBtn">+ Ingredients</button>
+                </div>
+
+                <div class="col">
+                    <label for="category">Select Category</label>
+                    <select class="form-select" name="category" aria-label="Category" required>
+                        <option selected>Select Category</option>
+                        <option value="Thai">Thai</option>
+                        <option value="American">American</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Indian">Indian</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="image">Product Image</label>
+                    <input type="file" name="image" accept="image/*" required>
+                </div>
+
+                <div>
+                    <button type="submit">Submit Recipe</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
