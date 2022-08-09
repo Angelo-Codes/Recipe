@@ -1,10 +1,10 @@
 <h1>Explore Latest</h1>
-<div>
+<div class="allscategory">
     <% if(recipe != '') { %> 
         <% recipe.forEach(function(recipe, index) { %>
-            <a href="/recipe/<%- recipe._id %>">
-                <div class="category">
-                    <img src="img/<%- recipe.img %> " alt="<%- recipe.name %>">
+            <a class="boxitem" href="/recipe/<%- recipe._id %>">
+                <div class="explorecategory">
+                    <img src="uploads/<%- recipe.image %> " alt="<%- recipe.name %>">
                 </div>
                 <div><%- recipe.name %></div>
             </a>

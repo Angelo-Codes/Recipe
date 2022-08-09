@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     display: flex;
     justify-content: center;
@@ -8,18 +13,22 @@ body{
     background: white;
     max-width: 1000px;
     padding: 10px;
-    box-sizing: border-box;
     border-radius: 5px;
     margin-bottom: 500px;
+    font-family: 'Courier New', Courier, monospace';
 }
 .logo{
     font-size: 35px;
     font-weight: 600;
 }
 header{
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 980px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid blue;
 }
 ul{
     display: flex;
@@ -32,6 +41,7 @@ ul{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .titleimg img{
     height: 250px;
@@ -44,6 +54,9 @@ ul{
     display: block;
     justify-content: center;
     align-items: center;
+}
+.recipebtn{
+    margin-top: 15px;
 }
 .latestbtn{
     border-radius: 5px;
@@ -58,18 +71,124 @@ ul{
 }
 .category{
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 20px;
     margin-bottom: 50px;
 }
-.categoryimg{
-    height: 120px;
-    width: 100px;
-    object-fit: fill;
+.allscategory{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px 50px;
+}
+.boxitem{
+    border-radius: 5px;
+    margin: 10px;
+}
+.boxitem div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .categoryimg img{
-    height: 120px;
-    width: 100px;
+    height: 80px;
+    width: 130px;
     object-fit: fill;
+    border-radius: 5px;
 }
 /* latest recipe */
+.explorecategory img,
+.allcategory img,
+.americancategory img,
+.latestcategory img{
+    height: 200px;
+    width: 150px;
+    border-radius: 5px;
+}
+.selection{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.footersection img{
+    width: 80%;
+    height: 100px;
+}
+.submitrecipe,
+.footersection{
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.colbtn button,
+.footersection a{
+    border-radius: 5px;
+    background: black;
+    color: white;
+    padding: 10px;
+}
+.footerbtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.formbox{
+    display: flex;
+    justify-content: center;
+}
+.centerbox{
+    width: 50%;
+    padding: 30px;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+textarea,
+input{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+}
+.col,
+.row{
+    border-style: none;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.colbtn{
+    border-style: none;
+    margin: 10px;
+    display: flex;
+}
+.boxrecipe img{
+    height: 450px;
+    width: 300px;
+    border-radius: 5px;
+}
+.boxrecipe{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 50px;
+}
+.boxrecipe ul{
+    display: block;
+    margin: 10px;
+}
+.boxrecipe ul li{
+    margin: 10px;
+}
+.viewmore{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

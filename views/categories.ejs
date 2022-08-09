@@ -1,17 +1,17 @@
 <h1>Explore Categories</h1>
 <nav>
-    <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/categories">Categories</a></li>
+    <ol class="selection">
+        <li><a href="/">Home/</a></li>
+        <li><a href="/categories">Categories/</a></li>
         <li>Explore Categories</li>
     </ol>
 </nav>
-<div>
+<div class="allscategory">
     <% if(typeof categories !== 'undefined' && categories.length > 0) { %>
         <% categories.forEach(function(category, index) { %>
-            <a href="/categories/<%- category.name %>">
-                <div class="category">
-                    <img src="img/<%- category.img %> " alt="<%- category.name %>">
+            <a class="boxitem" href="/categories/<%- category.name %>">
+                <div class="allcategory">
+                    <img src="img/<%- category.image %>" alt="<%- category.name %>">
                 </div>
                 <div><%- category.name %></div>
             </a>
@@ -22,8 +22,8 @@
     <% if(typeof categoryById !== 'undefined' && categoryById.length > 0) { %>
         <% categoryById.forEach(function(recipe, index) { %>
             <a href="/recipe/<%- recipe._id %>">
-                <div class="category">
-                    <img src="img/<%- recipe.img %> " alt="<%- recipe.name %>">
+                <div class="allcategory img">
+                    <img src="uploads/<%- recipe.image %> " alt="<%- recipe.name %>">
                 </div>
                 <div><%- recipe.name %></div>
             </a>

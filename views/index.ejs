@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="titleimg">
-        <img src="img/thai-food.jpg" alt="thai-food">
+        <img src="img/food.jpg" alt="thai-food">
     </div>
 </div>
 
@@ -18,33 +18,33 @@
 <div class="category">
     <% if(categories != '') { %>
         <% categories.forEach(function(category, index) { %> 
-            <a href="/categories/<%- category.name %>">
+            <a class="boxitem" href="/categories/<%- category.name %>">
                 <div class="categoryimg">
-                    <img src="img/<%- category.img %>" alt="<%- category.name %>">
+                    <img src="img/<%- category.image %>" alt="<%- category.name %>">
                 </div>
                 <div><%- category.name %></div>
             </a>
         <% }) %>
     <% } %>
-    <a href="/categories">
+    <a class="boxitem" href="/categories">
         <div class="categoryimg">
-            <img src="img/thai-food" alt="thai-food">
+            <img src="img/list.jpg" alt="thai-food">
         </div>
         <div>view all</div>
     </a>
 </div>
 
 <!-- latest start -->
-<section>
-    <div>
+<section class="latest">
+    <div class="viewmore">
         <h2>Latest recipe</h2>
         <a href="/explore-latest">View More</a>
     </div>
-    <div class="category">
+    <div class="allscategory">
         <% if(food != '') { %> 
             <% food.latest.forEach(function(recipe, index) { %> 
-                <a href="/recipe/<%= recipe._id %>">
-                    <div class="categoryimg">
+                <a class="boxitem" href="/recipe/<%= recipe._id %>">
+                    <div class="latestcategory">
                         <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>">
                     </div>
                     <div><%= recipe.name %></div>
@@ -55,19 +55,19 @@
 </section>
 
 <!-- american food -->
-<section>
-    <div>
+<section class="american">
+    <div class="viewmore">
         <h2>American Recipes</h2>
         <a href="/categories/American">View More</a>
     </div>
-    <div class="category">
-        <% if(typeof food.american !== 'undefined' && food.american.length > 0) { %> 
+    <div class="allscategory">
+        <% if(typeof food.american !== 'undefined' && food.american.length > 0) { %>
             <% food.american.forEach(function(recipe, index) { %>
-                <a href="/recipe/<%- recipe._id %>">
-                    <div class="categoryimg">
-                        <img src="img/<%- recipe.img %>" alt="<%- recipe.name %>">
+                <a class="boxitem" href="/recipe/<%- recipe._id %>">
+                    <div class="americancategory">
+                        <img src="uploads/<%- recipe.image %>" alt="<%- recipe.name %>">
                     </div>
-                    <div><%- recipe.name %></div>
+                    <div class="categoryname"><%- recipe.name %></div>
                 </a>
             <% }) %>
         <% } else {%>
@@ -77,13 +77,14 @@
 </section>
 
 <!-- submit start -->
-<section>
-    <img src="img/vivant.jpg" alt="">
+<section class="footersection">
+    <img src="img/list.jpg" alt="">
     <h1>Publish your recipe for free today</h1>
     <div>
         <p>Publish your recipe in front of thousand of people for free.</p>
-        <div>
+        <div class="footerbtn">
             <a href="/submit-recipe">Submit recipe</a>
         </div>
     </div>
+    
 </section>

@@ -1,9 +1,9 @@
 <h1>Random Recipe</h1>
-<div>
+<div class="allscategory">
     <% if(recipe != '') { %> 
-        <a href="/recipe/<%- recipe._id %>">
+        <a class="boxitem" href="/recipe/<%- recipe._id %>">
             <div class="category">
-                <img src="img/<%- recipe.img %> " alt="<%- recipe.name %>">
+                <img src="uploads/<%- recipe.image %> " alt="<%- recipe.name %>">
             </div>
             <div><%- recipe.name %></div>
         </a>

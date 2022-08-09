@@ -1,4 +1,4 @@
-<div>
+<div class="submitrecipe">
     <h1>Submit Your Recipe</h1>
     <div>
         <p>Share your amazing recipes with thousands of web developers accross the world. Fill our form to get started.</p>
@@ -6,7 +6,7 @@
 </div>
 
 
-<div>
+<div class="formbox">
 <% if(infoSubmitObj != '') {%> 
     <div class="alert" role="alert">
         <%= infoSubmitObj %> 
@@ -18,7 +18,7 @@
     </div>
 <% } %>
 
-    <div>
+    <div class="centerbox">
         <form action="/submit-recipe" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <div class="col">
@@ -39,7 +39,7 @@
                     <small>Example: Ice</small>
                     <div class="ingredientList">
                         <div class="ingredientDiv">
-                            <input type="text" name="ingredients" required>
+                            <input type="text" name="ingredients">
                         </div>
                     </div>
                 </div>
@@ -59,12 +59,11 @@
                     </select>
                 </div>
 
-                <div>
-                    <label for="image">Product Image</label>
+                <div class="col">
+                    <label for="image">Product Image</label><br>
                     <input type="file" name="image" accept="image/*" required>
                 </div>
-
-                <div>
+                <div class="colbtn">
                     <button type="submit">Submit Recipe</button>
                 </div>
             </div>
