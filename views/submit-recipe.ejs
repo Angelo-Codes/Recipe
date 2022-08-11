@@ -7,18 +7,19 @@
 
 
 <div class="formbox">
-<% if(infoSubmitObj != '') {%> 
-    <div class="alert" role="alert">
-        <%= infoSubmitObj %> 
-    </div>
-<% } %>
-<% if(infoErrorsObj != '') {%> 
-    <div class="alert" role="alert">
-        <%= infoErrorsObj %> 
-    </div>
-<% } %>
-
     <div class="centerbox">
+        
+        <% if(infoSubmitObj != '') {%> 
+            <div class="alert" role="alert">
+                <%= infoSubmitObj %> 
+            </div>
+        <% } %>
+        <% if(infoErrorsObj != '') {%> 
+            <div class="alert" role="alert">
+                <%= infoErrorsObj[0].message %> 
+            </div>
+        <% } %>
+
         <form action="/submit-recipe" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <div class="col">

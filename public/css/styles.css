@@ -2,12 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(228, 226, 226);
+    background-image: url(../img/cookingback.jpg);
+    background-color: gainsboro;
+    font-family: sans-serif;
+}
+a{
+    color: black;
 }
 .mainbody{
     background: white;
@@ -15,7 +21,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 500px;
-    font-family: 'Courier New', Courier, monospace';
+    box-shadow: 0 5px 10px 0 rgba(168, 168, 168, 0.3), 0 7px 21px 0 rgb(92, 91, 91);
 }
 .logo{
     font-size: 35px;
@@ -47,7 +53,11 @@ ul{
     height: 250px;
     width: 370px;
     object-fit: cover;
-    border-radius: 6px;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 80px;
+    box-shadow: 5px 3px black;
 }
 .titlediv{
     width: 50%;
@@ -60,7 +70,7 @@ ul{
 }
 .latestbtn{
     border-radius: 5px;
-    background: black;
+    background: linear-gradient(to left, #743ad5, #d53a9d);
     color: white;
     padding: 10px;
 }
@@ -70,13 +80,20 @@ ul{
     border-radius: 5px;
 }
 .category{
+    margin: 50px 0px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    margin-bottom: 50px;
+}
+.categorylatest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
 }
 .allscategory{
+    margin: 50px 0px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -84,8 +101,11 @@ ul{
     padding: 10px 50px;
 }
 .boxitem{
+    height: 200px;
+    width: 150px;
     border-radius: 5px;
     margin: 10px;
+    margin-bottom: 50px;
 }
 .boxitem div{
     display: flex;
@@ -112,9 +132,38 @@ ul{
     align-items: center;
     list-style: none;
 }
+.footermain{
+    padding: 20px;
+    margin-top: 50px;
+}
+.imgfooter{
+    max-width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+.img1{
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 180px;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 80px;
+}
+.img2{
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 250px;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+}
+.img3{
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 150px;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 280px;
+}
 .footersection img{
-    width: 80%;
+    width: calc(100% / 3 - 3);
     height: 100px;
+    margin: 20px;
+    box-shadow: 10px 5px rgb(216, 214, 214), 10px 5px white;
 }
 .submitrecipe,
 .footersection{
@@ -127,7 +176,7 @@ ul{
 .colbtn button,
 .footersection a{
     border-radius: 5px;
-    background: black;
+    background: linear-gradient(to left, #743ad5, #d53a9d);
     color: white;
     padding: 10px;
 }
@@ -155,6 +204,7 @@ input{
     padding: 5px 10px;
     margin: 8px 0;
     border-radius: 5px;
+    outline: none;
 }
 .col,
 .row{

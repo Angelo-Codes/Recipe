@@ -27,7 +27,7 @@ const recipeSchema = new mongoose.Schema({
         required: 'This fild is required.'
     }
 });
-recipeSchema.index({name: 'text', description: 'text'});
+recipeSchema.index({name: 'text', discription: 'text'});
 //recipeSchema.index({ "$**": 'text'});
 
 module.exports = mongoose.model('Recipe', recipeSchema);

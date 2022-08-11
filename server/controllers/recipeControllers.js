@@ -59,7 +59,7 @@ exports.exploreCategoriesById = async(req, res) => {
 exports.searchRecipe = async(req, res) => {
     try{
         let searchTerm = req.body.searchTerm;
-        let recipe = await Recipe.find( { $text: { search: searchTerm, $diacriticSensitive: true } });
+        let recipe = await Recipe.find( { $text: { $search: searchTerm, $diacriticSensitive: true } });
         res.render('search', {title: 'Cooking Blog - Search', recipe});
     }catch (error){
         res.status(500).send({message: error.message || "Error Occured"});
@@ -82,7 +82,7 @@ exports.randomRecipe = async(req, res) => {
     try{
         let count = await Recipe.find().countDocuments();
         let random = Math.floor(Math.random() * count);
-        let recipe = await Recipe.find().skip(random).exec();
+        let recipe = await Recipe.findOne().skip(random).exec();
         res.render('random-recipe', {title: 'Cooking Blog - Explore Random', recipe});
     }catch (error){
         res.status(500).send({message: error.message || "Error Occured"});
@@ -91,7 +91,7 @@ exports.randomRecipe = async(req, res) => {
 //get submit Recipe
 exports.submitRecipe = async(req, res) => {
     const infoErrorsObj = req.flash('infoErrors');
-    const infoSubmitObj = req.flash(' ');
+    const infoSubmitObj = req.flash('infoSubmit');
     res.render('submit-recipe', {title: 'Cooking Blog - Submit Recipe', infoErrorsObj, infoSubmitObj});
 }
 
@@ -107,7 +107,7 @@ exports.submitRecipeOnPost = async(req, res) => {
         } else {
             imageUploadFile = req.files.image;
             newImageName = Date.now() + imageUploadFile.name;
-            uploadPath = require('path').resolve('./') + './public/uploads' + newImageName;
+            uploadPath = require('path').resolve('./') + '/public/uploads/' + newImageName;
 
             imageUploadFile.mv(uploadPath, function(err){
                 if(err) return res.satus(500).send(err);
@@ -122,10 +122,12 @@ exports.submitRecipeOnPost = async(req, res) => {
             category: req.body.category,
             image: newImageName
         });
-        res.flash('infoSubmit', 'Recipe has been added.');
+        await newRecipe.save();
+
+        req.flash('infoSubmit', 'Recipe has been added.');
         res.redirect('/submit-recipe');
     }catch(error){
-        res.flash('infoErrors', error);
+        req.flash('infoErrors', error);
         res.redirect('/submit-recipe');
     }
 }

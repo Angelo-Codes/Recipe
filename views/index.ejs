@@ -34,13 +34,13 @@
     </a>
 </div>
 
-<!-- latest start -->
+<!-- latest recipe -->
 <section class="latest">
     <div class="viewmore">
         <h2>Latest recipe</h2>
         <a href="/explore-latest">View More</a>
     </div>
-    <div class="allscategory">
+    <div class="categorylatest">
         <% if(food != '') { %> 
             <% food.latest.forEach(function(recipe, index) { %> 
                 <a class="boxitem" href="/recipe/<%= recipe._id %>">
@@ -78,7 +78,11 @@
 
 <!-- submit start -->
 <section class="footersection">
-    <img src="img/list.jpg" alt="">
+    <div class="imgfooter">
+        <img class="img1" src="img/list.jpg" alt="list">
+        <img class="img2" src="img/list.jpg" alt="list">
+        <img class="img3" src="img/list.jpg" alt="list">
+    </div>
     <h1>Publish your recipe for free today</h1>
     <div>
         <p>Publish your recipe in front of thousand of people for free.</p>

@@ -4,19 +4,20 @@
             <li><a href="/">Home</a></li>/
             <li><%- recipe.name %></li>
         </ol>
-    </nav>
+    </nav><br>
     <div class="boxrecipe">
         <div class="left">
             <img src="/uploads/<%- recipe.image %>" alt="<%- recipe.name %> ">
         </div>
         <div class="right">
             <div>
-                <div><h1><%- recipe.name %></h1></div>
-                <div><i>icon</i><%- recipe.category %></div>
+                <div><h1><%- recipe.name %></h1></div><br>
+                <div><i class="bi bi-tag"></i><%- recipe.category %></div><br>
                 <div>
                     <h4>Cooking Instructions</h4>
                     <%- recipe.discription %> 
                 </div>
+                <br>
             </div>
             <div>
                 <h4>Ingredients</h4>
